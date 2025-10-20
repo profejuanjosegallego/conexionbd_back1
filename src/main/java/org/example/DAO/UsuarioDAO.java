@@ -29,7 +29,10 @@ public class UsuarioDAO {
             PreparedStatement consulta=conectar.prepareStatement(sql);
 
             //se extraen los campos a guardar
-
+            consulta.setString(1,datosUsuario.getNombres());
+            consulta.setString(2,datosUsuario.getContraseña());
+            consulta.setString(3,datosUsuario.getPerfil());
+            consulta.executeUpdate();
             System.out.println("Exito guardado en usuario en BD");
 
         }catch(SQLException error){
